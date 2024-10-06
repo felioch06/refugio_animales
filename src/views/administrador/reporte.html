@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/reporte.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="shortcut icon" href="../../assets/images/logo.png" type="image/x-icon">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__content">
+            <img src="../../assets/images/logo.png" alt="" class="header__logo">
+            <span class="header__name">Refugio de animales</span>
+        </div>
+        <div class="header__main">
+            <h1 class="header__title">Administrador</h1>
+            <a href="/src/index.html">
+                <img src="../../assets/images/off.png" alt="" class="header__logout">
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <nav class="navbar">
+
+            <a href="dashboard.html" class="menu-item--simple">Dashboard</a>
+            <div class="menu-item">Cuidadores</div>
+            <div class="submenu">
+                <a href="/src/views/administrador/nuevo_cuidador.html">Nuevo cuidador</a>
+                <a href="#">Lista de cuidadores</a>
+                <a href="#">Asignar animales</a>
+            </div>
+            <div class="menu-item">Animales</div>
+            <div class="submenu">
+                <a href="#">Nuevo animal</a>
+                <a href="#">Lista de animales</a>
+                <a href="#">Asignar cuidadores</a>
+            </div>
+            <div class="menu-item">Reportes</div>
+            <div class="submenu">
+                <a href="#">Por animal registrado</a>
+                <a href="reporte.html">Por cuidador a cargo</a>
+            </div>
+
+        </nav>
+        <section class="report">
+            <h2 class="report__title">Reporte por cuidador a cargo</h2>
+            <div class="report__filter">
+                <label for="" class="filter_item">
+                    <span class="filter__title">Nombre del cuidador</span>
+                    <select name="" id="" class="filter__input">
+                        <option value="" selected>Seleccione un cuidador</option>
+                        <option value="">Cuidador 1</option>
+                        <option value="">Cuidador 2</option>
+                        <option value="">Cuidador 3</option>
+                        <option value="">Cuidador 4</option>
+                    </select>
+                </label>
+                <label for="" class="filter_item">
+                    <span class="filter__title">Animal asignado</span>
+                    <select name="" id="" class="filter__input">
+                        <option value="" selected>Todos</option>
+                        <option value="">Cuidador 1</option>
+                        <option value="">Cuidador 2</option>
+                        <option value="">Cuidador 3</option>
+                        <option value="">Cuidador 4</option>
+                    </select>
+                </label>
+                <label for="" class="filter_item">
+                    <span class="filter__title">Fecha inicial</span>
+                    <input type="date" class="filter__input" placeholder="dd/mm/yyyy">
+                </label>
+                <label for="" class="filter_item">
+                    <span class="filter__title">fecha final</span>
+                    <input type="date" class="filter__input" placeholder="dd/mm/yyyy">
+                </label>
+            </div>
+
+            <table class="report__table">
+                <thead class="table__head">
+                    <tr class="table__head_row">
+                        <td>Nombre del cuidador</td>
+                        <td>Animal asignado</td>
+                        <td>Fecha de registro</td>
+                        <td>Estado de salud</td>
+                        <td>Días restantes</td>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__body_row">
+                        <td>Cuidador 1</td>
+                        <td>Perro 1</td>
+                        <td>01/04/2024</td>
+                        <td>Bueno</td>
+                        <td>14</td>
+                    </tr>
+                    <tr class="table__body_row">
+                        <td>Cuidador 1</td>
+                        <td>Perro 1</td>
+                        <td>01/04/2024</td>
+                        <td>Bueno</td>
+                        <td>14</td>
+                    </tr>
+                    <tr class="table__body_row">
+                        <td>Cuidador 1</td>
+                        <td>Perro 1</td>
+                        <td>01/04/2024</td>
+                        <td>Bueno</td>
+                        <td>14</td>
+                    </tr>
+                    <tr class="table__body_row">
+                        <td>Cuidador 1</td>
+                        <td>Perro 1</td>
+                        <td>01/04/2024</td>
+                        <td>Bueno</td>
+                        <td>14</td>
+                    </tr>
+                    <tr class="table__body_row">
+                        <td>Cuidador 1</td>
+                        <td>Perro 1</td>
+                        <td>01/04/2024</td>
+                        <td>Bueno</td>
+                        <td>14</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const submenu = item.nextElementSibling;
+                // document.querySelectorAll('.submenu').forEach(sub => {
+                //     sub.style.display = 'none';
+                // });
+                submenu.classList.toggle("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>

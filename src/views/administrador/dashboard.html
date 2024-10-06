@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="shortcut icon" href="../../assets/images/logo.png" type="image/x-icon">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__content">
+            <img src="../../assets/images/logo.png" alt="" class="header__logo">
+            <span class="header__name">Refugio de animales</span>
+        </div>
+        <div class="header__main">
+            <h1 class="header__title">Administrador</h1>
+            <a href="/src/index.html">
+                <img src="../../assets/images/off.png" alt="" class="header__logout">
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <nav class="navbar">
+
+            <a href="/src/views/administrador/dashboard.html" class="menu-item--simple">Dashboard</a>
+            <div class="menu-item">Cuidadores</div>
+            <div class="submenu">
+                <a href="/src/views/administrador/nuevo_cuidador.html">Nuevo cuidador</a>
+                <a href="#">Lista de cuidadores</a>
+                <a href="#">Asignar animales</a>
+            </div>
+            <div class="menu-item">Animales</div>
+            <div class="submenu">
+                <a href="#">Nuevo animal</a>
+                <a href="#">Lista de animales</a>
+                <a href="#">Asignar cuidadores</a>
+            </div>
+            <div class="menu-item">Reportes</div>
+            <div class="submenu">
+                <a href="#">Por animal registrado</a>
+                <a href="/src/views/administrador/reporte.html">Por cuidador a cargo</a>
+            </div>
+
+        </nav>
+        <section class="dashboard">
+            <h2 class="dashboard__title">Tablero de resumen</h2>
+            <div class="dashboard__content">
+                <div class="dashboard__items">
+
+                    <div class="dashboard__item">
+                        <h3 class="dashboard__item_title">Cuidadores</h3>
+                        <div class="dashboard__item_container">
+                            <div class="dashboard__item_container_image">
+                                <img src="../../assets/images/person.png" alt="" class="dashboard__item_image">
+                            </div>
+                            <div class="dashboard__item_data">
+                                <span class="dashboard__item_quantity">10</span>
+                                <span class="dashboard__item_text">Personas activas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard__item">
+                        <h3 class="dashboard__item_title">Animales</h3>
+                        <div class="dashboard__item_container">
+                            <div class="dashboard__item_container_image">
+                                <img src="../../assets/images/pata.png" alt="" class="dashboard__item_image">
+                            </div>
+                            <div class="dashboard__item_data">
+                                <span class="dashboard__item_quantity">37</span>
+                                <span class="dashboard__item_text">Bajo cuidado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tasks">
+                    <div class="card__add_container">
+                        <form action="" class="card__form">
+                            <input type="text" class="card__input" placeholder="Escribe la tarea...">
+                            <button class="card__button">Guardar</button>
+                        </form>
+                    </div>
+                    <div class="card_tasks">
+                        <h3 class="card_tasks__title">Tareas Pendientes</h3>
+                        <div class="card_tasks__items">
+                            <div class="card_tasks__item">
+                                <input type="checkbox" checked class="card_tasks__checkbox">
+                                <p class="card_tasks__description">Lorem ipsum dolor sit amet consectetur. Lorem ipsum
+                                    dolor sit amet consectetur</p>
+                            </div>
+                            <div class="card_tasks__item">
+                                <input type="checkbox" checked class="card_tasks__checkbox">
+                                <p class="card_tasks__description">Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                            <div class="card_tasks__item">
+                                <input type="checkbox" class="card_tasks__checkbox">
+                                <p class="card_tasks__description">Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                            <div class="card_tasks__item">
+                                <input type="checkbox" class="card_tasks__checkbox">
+                                <p class="card_tasks__description">Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                            <div class="card_tasks__item">
+                                <input type="checkbox" class="card_tasks__checkbox">
+                                <p class="card_tasks__description">Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                            <div class="card_tasks__item">
+                                <input type="checkbox" class="card_tasks__checkbox">
+                                <p class="card_tasks__description">Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const submenu = item.nextElementSibling;
+                // document.querySelectorAll('.submenu').forEach(sub => {
+                //     sub.style.display = 'none';
+                // });
+                submenu.classList.toggle("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/cuidador.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="shortcut icon" href="../../assets/images/logo.png" type="image/x-icon">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__content">
+            <img src="../../assets/images/logo.png" alt="" class="header__logo">
+            <span class="header__name">Refugio de animales</span>
+        </div>
+        <div class="header__main">
+            <h1 class="header__title">Administrador</h1>
+            <a href="/src/index.html">
+                <img src="../../assets/images/off.png" alt="" class="header__logout">
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <nav class="navbar">
+
+            <a href="/src/views/administrador/dashboard.html" class="menu-item--simple">Dashboard</a>
+            <div class="menu-item">Cuidadores</div>
+            <div class="submenu">
+                <a href="/src/views/administrador/nuevo_cuidador.html">Nuevo cuidador</a>
+                <a href="#">Lista de cuidadores</a>
+                <a href="#">Asignar animales</a>
+            </div>
+            <div class="menu-item">Animales</div>
+            <div class="submenu">
+                <a href="#">Nuevo animal</a>
+                <a href="#">Lista de animales</a>
+                <a href="#">Asignar cuidadores</a>
+            </div>
+            <div class="menu-item">Reportes</div>
+            <div class="submenu">
+                <a href="#">Por animal registrado</a>
+                <a href="/src/views/administrador/reporte.html">Por cuidador a cargo</a>
+            </div>
+
+        </nav>
+        <section class="container">
+            <h2 class="form__title">Agregar un nuevo cuidador</h2>
+
+            <form action="" id="agregarCuidador" class="form">
+                <input type="text" placeholder="Nombre" name="name" required class="form__input">
+                <input type="email" placeholder="Email" name="email" required class="form__input">
+                <input type="number" placeholder="Celular" name="celular" required class="form__input">
+                <input type="text" placeholder="User" name="user" required class="form__input">
+                <input type="password" placeholder="Contraseña" name="password" required class="form__input">
+                <p class="form__error hidden">El usuario ya existe</p>
+                <p class="form__success hidden">Usuario registrado correctamente</p>
+                <button class="form__button">Ingresar</button>
+            </form>
+
+        </section>
+    </main>
+
+    <script type="module" src="../../assets/js/App.js"></script>
+    <script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const submenu = item.nextElementSibling;
+                // document.querySelectorAll('.submenu').forEach(sub => {
+                //     sub.style.display = 'none';
+                // });
+                submenu.classList.toggle("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>
